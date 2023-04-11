@@ -16,7 +16,8 @@ public class MedicoController {
     @Autowired
     private MedicoRepository repository;
     @PostMapping
-    public void register(@RequestBody DadosCadastroMedico dados){
+    @Transactional
+    public void register(@RequestBody DadosCadastroMedico dados) {
         repository.save(new Medico(dados));
     }
 }
