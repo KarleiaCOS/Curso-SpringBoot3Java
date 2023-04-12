@@ -2,7 +2,7 @@ package med.voll.api.paciente;
 
 import med.voll.api.endreco.DadosEndereco;
 
-public record PatientRegistrationData(
+public record DadosCadastroPaciente(
         String nome,
         String email,
         String telefone,
