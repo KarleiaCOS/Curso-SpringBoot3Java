@@ -19,6 +19,7 @@ public class MedicoController {
     @PostMapping
     @Transactional
     public void register(@RequestBody @Valid DadosCadastroMedico dados) {
+
         repository.save(new Medico(dados));
     }
 }

@@ -12,20 +12,22 @@ import med.voll.api.endreco.Endereco;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "id")
 public class Paciente {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String email;
     private String telefone;
+    private String cpf;
     @Embedded
     private Endereco endereco;
 
-    public Paciente(DadosCadastroPaciente data) {
-        this.nome = data.nome();
-        this.email = data.email();
-        this.telefone = data.telefone();
-        this.endereco = new Endereco(data.endereco());
+    public Paciente(DadosCadastroPaciente dados) {
+        this.nome = dados.nome();
+        this.email = dados.email();
+        this.telefone = dados.telefone();
+        this.cpf = dados.cpf();
+        this.endereco = new Endereco(dados.endereco());
     }
 }
