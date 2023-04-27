@@ -7,6 +7,10 @@ public record DadosListagemPacientes(
         String email)
 {
     public DadosListagemPacientes(Paciente paciente){
-        this(paciente.getId(), paciente.getNome(), paciente.getCpf(), paciente.getEmail());
+        this(
+                paciente.getId(),
+                paciente.getNome(),
+                paciente.getCpf(),
+                paciente.getEmail());
     }
 }
